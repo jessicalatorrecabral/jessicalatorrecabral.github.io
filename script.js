@@ -1,8 +1,10 @@
+//****WARNING****:este é o código atualizado
+
 let canvas
 let ctx
 let playing = true
-let x  
-let intervalo  
+ 
+
 
 
 window.onload = function(){ //depois que carregar a pagina
@@ -12,10 +14,7 @@ window.onload = function(){ //depois que carregar a pagina
     document.addEventListener("keydown", keyDownEvent)
      //sempre que uma tecla for pressionada
      x = 8
-    setInterval(redesenharJogo, 1000 / x)
-
-    
-     //define um intervalo para uma function ser chamada. a cada 1000 milesgundos por 8
+    setInterval(redesenharJogo, 1000 / x)//define um intervalo para uma function ser chamada. 1000 ms  = 1segundo
 }
 //Tela do jogo
 
@@ -33,18 +32,10 @@ let cobraEixoX = cobraEixoY = 10 //ponto de inicio da cobra
 
 let comidinhaX = (comidinhaY = 15) //posição inicial da comidinha
 
-
-
-
 function redesenharJogo(){
 
     if(playing === true){
-
-   
     
-
-    
-        
     cobraEixoX += eixoX
     cobraEixoY += eixoY
     
@@ -63,22 +54,15 @@ function redesenharJogo(){
         }
 
     
-        
-    
-    
         if (cobraEixoX == comidinhaX && cobraEixoY == comidinhaY){ //aumenta um quadradinho na cauda
             tamanhoCauda++
-            comidinhaX = Math.floor(Math.random() * tamanhoDaTela); //redefine a posição da comida, randomicamente, posições aleatorias no tabuleiro. o y é igual :D
+            comidinhaX = Math.floor(Math.random() * tamanhoDaTela); //redefine a posição da comida, randomicamente, posições aleatorias no tabuleiro. O mesmo no eixo y :D
             comidinhaY = Math.floor(Math.random() * tamanhoDaTela);
             }
 
-    
-        
 
-
-    
-    // onde a cobra passa (telA)
-    ctx.fillStyle = '#000' //define a cor do preenchimento do retangulo. Sempre que a cobra andar, ele vai pintar
+    // onde a cobra passa (tela)
+    ctx.fillStyle = '#000' //define a cor do preenchimento do retangulo.
         ctx.fillRect(0, 0, canvas.width, canvas.height) //define a posição do retangulo. Desenha um retangulo preenchido na posição x,y. Aqui ele vai pintar o retangulo, no caso a tela onde a cobra vai andar
 
     //cobra
@@ -89,17 +73,13 @@ function redesenharJogo(){
                 caminhoDaCobra[i].x * tamanhoCaminho, //o caminho da posição [i] no eixo x e no eixo y e preenche.
                 caminhoDaCobra[i].y * tamanhoCaminho,
                 tamanhoCaminho -1,
-                tamanhoCaminho -1
+                tamanhoCaminho -1 //cobrinha "listrada"
             )
             if (caminhoDaCobra[i].x == cobraEixoX && caminhoDaCobra[i].y == cobraEixoY){ //verifica se a cobra encosta nela mesma
                 tamanhoCauda = tamanhoInicial
                 
                 }
             }
-
-    
-
-
     ctx.fillStyle = '#c11'
     ctx.fillRect(comidinhaX * tamanhoCaminho, comidinhaY * tamanhoCaminho, tamanhoCaminho, tamanhoCaminho)
     // na linha de cima, estou multiplicando 15 por 20, já definidos anteriormente, para definiar a posição que vamos pintar (o quadradinho).15 * o numero de pixels que o caminho tem(tamanhoCaminho).
@@ -109,31 +89,13 @@ function redesenharJogo(){
                     x:cobraEixoX,
                     y:cobraEixoY
                 })
-            
-
-    
- 
-   
-    
-            }
-           
-      
-    
-        while (caminhoDaCobra.length > tamanhoCauda){ // verifica se o tamanho do rastro é maoior que a cauda (cumprimento da cobra)
+            } 
+           while (caminhoDaCobra.length > tamanhoCauda){ // verifica se o tamanho do rastro é maoior que a cauda (cumprimento da cobra)
             caminhoDaCobra.shift()
                 }
 
     }
 
-    
-    
-    
-
-    
-    
-
-
-    
 function keyDownEvent(event){ //dispara um evento, ao pressionar as setas do teclado. Esses numeros são o code que representam teclas fisicas do teclado.
     
         switch(event.keyCode){
@@ -162,11 +124,14 @@ document.addEventListener("keydown", keyPressEventO)
 function keyPressEventO(event){
     if(event.keyCode == 32){
       playing = false
+      ctx.fillStyle = 'rgba(255,255,255,0.2)'
+                ctx.fillRect(0,0,canvas.width, canvas.height) //quando o jogo é pausado, a tela fica opaca
     } else {
         playing = true
     } 
-//Depois de todos os bugs possiveis e imagináveis, consegui fazer uma feature de pause. Isso MESMO, 4 LINHAS DE CÓDIGO APENAS, me causaram dores de cabeça hehe
-    
+/*Depois de todos os bugs possiveis e imagináveis, consegui fazer uma feature de pause. 
+Isso MESMO, 4 LINHAS DE CÓDIGO APENAS, me causaram dores de cabeça hehe
+  */  
    
 }
 
