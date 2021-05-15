@@ -17,5 +17,5 @@
 </ul>
 <p>Status do projeto: concluído ✔</p>
 <h3>O jogo pode ser acessado nesse link</h3>
-<a href="jessicalatorrecabral.github.io"> 🍎 Jogo da cobrinha 🐍 </a>
+<a href="https://jessicalatorrecabral.github.io/jogodacobrinha.github.io/"> 🍎 Jogo da cobrinha 🐍 </a>
  
