@@ -1,6 +1,6 @@
 
 <h1> Jogo da cobrinha 🐍 </h1>
-<p>Para fins de estudo, adaptei algumas funcionalidades no clássio joguinho da cobrinha</p>
+<p>Para fins de estudo, adaptei algumas funcionalidades no clássico joguinho da cobrinha</p>
 
 <h2> O que é possível no jogo:</h2>
 <li>É possível pausar o jogo ao pressionar a tecla de "espaço";</li>
@@ -12,7 +12,7 @@
   <li>Mover para direita: ➡</li>
 <h2>Bugs e outros erros</h2>
 <ul>
-<li> Ao pressionar a tecla "space", o jogo é pausado e é aplicado uma opacidade leve na tela do jogo, porém se pressionar novamente o pause, essa opacidade vai ser aplicada novamente, deixando a tela totalmente branca 😢.
+<li> Ao pressionar a tecla "space", o jogo é pausado e é aplicado uma opacidade leve na tela do jogo, porém se pressionar novamente o pause, essa opacidade vai ser aplicada novamente, deixando a tela totalmente branca a cada vez que a tecla é pressionada 😢.
 
 </ul>
 <p>Status do projeto: concluído ✔</p>
